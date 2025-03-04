@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #col{
+            justify-content: center;
+            height: 400px;
+            width: 330px;
+            border: 1px solid black;
+            padding: 5px;
+            margin: 30px;
+            background-color: rgb(255, 247, 8);
+            box-shadow: 5px 5px 5px rgb(38, 96, 101);
+           
+        }  
+         .out{
+            font-weight:bolder;
+            color:rgb(128,128,128);
+            font-style:normal;
+             border: 2px solid rgb(180, 151, 6); 
+            height: 35px;
+            margin-top: 20px;
+            margin-left: 12px;
+            width: 300px; 
+        }
+        #buttons{
+            display:grid;
+            grid-template-columns: auto auto auto auto ;
+            gap:20px;
+            margin: 10px;
+            padding:20px;
+        }
+        .but {
+          height: 40px;
+          width: 50px;
+          font-style: normal;
+          font-size: 20px;
+          font-weight: bold;
+          background-color:rgb(47, 174, 165) ;  
+          color: white;                      
+          border-radius: 2px;
+          border:3px solid rgb(0, 0, 0);
+         
+}
+
+    </style>
+    <script>
+        function concact(c){
+            var input=document.getElementById('input').value;
+            input=input+c;
+            document.getElementById('input').value = input;
+            
+        }
+        function calculate(){
+            var input=document.getElementById('input').value;
+            input=eval(input);
+            document.getElementById('input').value=input+" ";
+        }
+        function clearInput() {
+            document.getElementById('input').value = ''; 
+        }
+    </script>
+</head>
+<body>
+    <div id="col">
+        <input type="text" id="input" class="out" size="30" value=" " readonly>
+        <div id="buttons">
+            <button class="but" onclick="concact('9')">9</button>
+            <button class="but" onclick="concact('8')">8</button>
+            <button class="but" onclick="concact('7')">7</button>
+            <button class="but" onclick="concact('+')">+</button>
+            <button class="but" onclick="concact('6')">6</button>
+            <button class="but" onclick="concact('5')">5</button>
+            <button class="but" onclick="concact('4')">4</button>
+            <button class="but" onclick="concact('-')">-</button>
+            <button class="but" onclick="concact('3')">3</button>
+            <button class="but" onclick="concact('2')">2</button>
+            <button class="but" onclick="concact('1')">1</button>
+            <button class="but" onclick="concact('')"></button>
+            <button class="but" onclick="concact('/')">/</button>
+            <button class="but" onclick="concact('.')">.</button>
+            <button class="but" onclick="concact('0')">0</button>
+            <button class="but" onclick="calculate()">=</button>
+            <button class="but" onclick="clearInput()">C</button>
+
+        </div> 
+</div>
+</body>
+</html>
